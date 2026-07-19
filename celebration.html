@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ctext x=%2216%22 y=%2224%22 font-size=%2224%22 text-anchor=%22middle%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2b1448">
+<title>Let's Celebrate! | A Surprise For You</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/love-story.css">
+<link rel="stylesheet" href="css/celebration.css">
+</head>
+<body class="page-enter">
+
+<div id="loading-screen">
+  <div class="loader-heart"></div>
+  <div class="loader-text">lighting the candles…</div>
+</div>
+
+<div id="ambient-layer"></div>
+<canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">❤</a>
+    <button class="nav-menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Welcome</a></li>
+      <li><a href="love-story.html">Our Story</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="love-letter.html">Love Letter</a></li>
+      <li><a href="celebration.html">Celebration</a></li>
+      <li><a href="final.html">Forever</a></li>
+    </ul>
+    <div class="nav-tools">
+      <div class="nav-heart-progress icon-btn" aria-hidden="true">
+        <svg viewBox="0 0 32 29">
+          <defs>
+            <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="var(--rose-light)"/>
+              <stop offset="100%" stop-color="var(--gold-light)"/>
+            </linearGradient>
+          </defs>
+          <path class="heart-track" d="M16 27 C16 27 2 18 2 9 C2 4 6 1 10 1 C13 1 15 3 16 5 C17 3 19 1 22 1 C26 1 30 4 30 9 C30 18 16 27 16 27 Z"/>
+          <path class="heart-fill" d="M16 27 C16 27 2 18 2 9 C2 4 6 1 10 1 C13 1 15 3 16 5 C17 3 19 1 22 1 C26 1 30 4 30 9 C30 18 16 27 16 27 Z"/>
+        </svg>
+      </div>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/><g stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></g></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="balloon-field" aria-hidden="true">
+  <span class="balloon balloon-1"></span>
+  <span class="balloon balloon-2"></span>
+  <span class="balloon balloon-3"></span>
+  <span class="balloon balloon-4"></span>
+  <span class="balloon balloon-5"></span>
+</div>
+
+<main>
+  <header class="page-hero">
+    <p class="eyebrow reveal">Chapter Four</p>
+    <h1 class="reveal">Let's <span class="script gradient-text">Celebrate</span> 🎉</h1>
+    <p class="page-hero-sub reveal" id="celebration-hint">Make a wish, then blow out the candles.</p>
+  </header>
+
+  <section class="section celebration-section">
+    <div class="container cake-container">
+
+      <div class="cake-scene reveal-scale">
+        <div class="cake">
+          <div class="candles" id="candles">
+            <div class="candle" data-lit="true"><div class="flame"></div><div class="stick"></div></div>
+            <div class="candle" data-lit="true"><div class="flame"></div><div class="stick"></div></div>
+            <div class="candle" data-lit="true"><div class="flame"></div><div class="stick"></div></div>
+            <div class="candle" data-lit="true"><div class="flame"></div><div class="stick"></div></div>
+            <div class="candle" data-lit="true"><div class="flame"></div><div class="stick"></div></div>
+          </div>
+          <div class="cake-top">
+            <div class="drip drip-1"></div><div class="drip drip-2"></div><div class="drip drip-3"></div>
+            <div class="drip drip-4"></div><div class="drip drip-5"></div>
+          </div>
+          <div class="cake-layer cake-layer-1"></div>
+          <div class="cake-layer cake-layer-2"></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+
+      <p class="cake-caption reveal" id="cake-caption">Tap each candle flame to blow it out 🕯️</p>
+      <div class="cake-actions">
+        <button id="celebrate-btn" class="btn btn-ghost" hidden>Relight Candles 🕯️</button>
+        <a href="final.html" id="final-link" class="btn btn-primary" hidden>One Last Thing →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span class="script">Made with all my heart</span>
+  For the one who makes every ordinary day feel like a celebration.
+</footer>
+
+<div id="music-player" class="glass paused">
+  <button id="music-toggle" aria-label="Play romantic music"></button>
+  <div class="music-bars"><span></span><span></span><span></span><span></span></div>
+</div>
+<audio id="bg-music" src="assets/music/romantic-bg.mp3" loop preload="none"></audio>
+
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/celebration.js"></script>
+</body>
+</html>
