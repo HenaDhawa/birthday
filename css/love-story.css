@@ -1,0 +1,73 @@
+/* ===================================================================
+   LOVE STORY PAGE — shared .page-hero also reused on other pages
+=================================================================== */
+
+.page-hero {
+  position: relative; z-index: 2;
+  padding: calc(var(--nav-height) + 70px) 24px 30px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.page-hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.4rem); margin-top: 12px; }
+.page-hero-sub { margin-top: 18px; font-size: 1.02rem; }
+
+/* ---- Timeline ---- */
+.timeline {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px; top: 6px; bottom: 6px; width: 2px;
+  background: linear-gradient(to bottom, var(--rose), var(--gold), var(--rose));
+  opacity: 0.4;
+}
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 26px;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+.timeline-dot {
+  flex: 0 0 auto;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
+  color: var(--bg-deep);
+  font-size: 1rem;
+  box-shadow: var(--shadow-glow);
+  z-index: 2;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+.timeline-card {
+  flex: 1;
+  padding: 26px 28px;
+  transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft);
+}
+.timeline-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+.timeline-card--today {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(234,185,106,0.14), rgba(232,143,163,0.10));
+}
+.timeline-date {
+  display: inline-block;
+  font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px;
+}
+.timeline-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.timeline-card p em { color: var(--rose-light); font-style: normal; opacity: 0.85; }
+
+.timeline-cta { text-align: center; margin-top: 50px; }
+
+@media (max-width: 640px) {
+  .timeline::before { left: 20px; }
+  .timeline-item { gap: 16px; }
+  .timeline-dot { width: 40px; height: 40px; font-size: 0.85rem; }
+  .timeline-card { padding: 20px 18px; }
+}

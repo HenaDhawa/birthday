@@ -1,0 +1,82 @@
+/* ===================================================================
+   KEYFRAME LIBRARY
+=================================================================== */
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  40% { transform: scale(0.95); }
+  60% { transform: scale(1.1); }
+}
+
+@keyframes musicBar {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.85; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-115vh) translateX(var(--drift, 30px)) rotate(25deg); opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(232,143,163,0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(234,185,106,0.75)); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes balloonRise {
+  0% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-24px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(-2deg); }
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) rotate(-1deg); opacity: 1; }
+  50% { transform: scaleY(0.92) rotate(2deg); opacity: 0.88; }
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(600deg); opacity: 0.9; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

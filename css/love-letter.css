@@ -1,0 +1,125 @@
+/* ===================================================================
+   LOVE LETTER PAGE — envelope open animation + typewriter letter
+=================================================================== */
+
+.letter-section { padding-top: 20px; }
+.letter-container {
+  display: flex; flex-direction: column; align-items: center; gap: 46px;
+  min-height: 60vh;
+}
+
+/* ---- Envelope ---- */
+.envelope-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.envelope {
+  position: relative;
+  width: min(86vw, 360px);
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+  perspective: 1000px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+.envelope-back {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--wine), #2c0f38);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.envelope-letter {
+  position: absolute;
+  left: 8%; right: 8%; top: 10%;
+  height: 76%;
+  background: linear-gradient(180deg, #fdf8f2, #f3e6da);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transform: translateY(6%);
+  transition: transform 1s var(--ease-soft);
+  z-index: 1;
+  overflow: hidden;
+}
+.envelope-letter-lines {
+  position: absolute; inset: 18px;
+  background-image: repeating-linear-gradient(to bottom, rgba(74,25,66,0.18) 0, rgba(74,25,66,0.18) 1px, transparent 1px, transparent 16px);
+}
+
+.envelope-front-pocket {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 62%;
+  background: linear-gradient(135deg, var(--rose-deep), var(--wine));
+  clip-path: polygon(0 100%, 100% 100%, 100% 18%, 50% 62%, 0 18%);
+  border-radius: 0 0 10px 10px;
+  z-index: 3;
+}
+
+.envelope-flap {
+  position: absolute; left: 0; right: 0; top: 0; height: 58%;
+  background: linear-gradient(135deg, var(--rose-deep), var(--wine));
+  clip-path: polygon(0 0, 100% 0, 50% 82%);
+  transform-origin: top center;
+  transition: transform 0.9s var(--ease-soft);
+  z-index: 4;
+  border-radius: 10px 10px 0 0;
+}
+
+.wax-seal {
+  position: absolute; left: 50%; top: 40%;
+  transform: translate(-50%, -50%);
+  width: 54px; height: 54px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-light), var(--gold) 60%, #a9761f 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--wine); font-size: 1.3rem;
+  box-shadow: var(--shadow-gold);
+  z-index: 5;
+  transition: opacity 0.4s, transform 0.4s;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ---- Open state ---- */
+.envelope.open { animation: none; }
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 2;
+}
+.envelope.open .wax-seal { opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
+.envelope.open .envelope-letter { transform: translateY(-58%); }
+
+.envelope-hint { font-size: 0.8rem; color: var(--text-faint); letter-spacing: 0.05em; }
+.envelope-wrap.opened { opacity: 0; height: 0; overflow: hidden; margin: 0; transition: opacity 0.5s, height 0.5s 0.3s, margin 0.5s 0.3s; }
+
+/* ---- Letter paper (revealed after opening) ---- */
+.letter-paper {
+  max-width: 640px;
+  width: 100%;
+  padding: clamp(28px, 5vw, 56px);
+  opacity: 0; transform: translateY(24px) scale(0.98);
+  transition: opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft);
+}
+.letter-paper.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+.letter-date { font-family: var(--font-script); font-size: 1.6rem; color: var(--rose-light); margin-bottom: 22px; }
+
+.typewriter {
+  font-size: 1.05rem; line-height: 2;
+  color: var(--text-primary);
+  min-height: 220px;
+  white-space: pre-wrap;
+}
+.typewriter .cursor {
+  display: inline-block; width: 2px; height: 1.1em; background: var(--gold);
+  margin-left: 2px; vertical-align: middle;
+  animation: blink 0.9s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.letter-sign { margin-top: 30px; font-size: 1.05rem; color: var(--text-primary); }
+.letter-sign .script { font-size: 1.5rem; color: var(--rose-light); }
+
+.letter-skip {
+  margin-top: 26px; font-size: 0.78rem; padding: 10px 22px;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s;
+}
+.letter-skip.show { opacity: 1; pointer-events: auto; }
+
+.letter-next { opacity: 0; transition: opacity 0.6s var(--ease-soft); }
+.letter-next.show { opacity: 1; }

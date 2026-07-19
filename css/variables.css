@@ -1,0 +1,77 @@
+/* ===================================================================
+   DESIGN TOKENS — "Midnight Love Letter"
+   A deep midnight-plum palette with rose and warm gold light, evoking
+   candlelight against a night sky. Two display faces carry the emotional
+   register: Great Vibes for the intimate, handwritten voice, Playfair
+   Display for ceremonial headlines. Poppins carries body copy.
+=================================================================== */
+
+:root {
+  /* ---- Color: Dark (default) theme ---- */
+  --bg-deep:        #120a20;
+  --bg-mid:         #1e0f38;
+  --bg-soft:        #2b1448;
+  --surface:        rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.10);
+  --border-glass:   rgba(255, 255, 255, 0.14);
+
+  --rose:           #e88fa3;
+  --rose-light:     #f6c9d4;
+  --rose-deep:      #b85670;
+  --gold:           #eab96a;
+  --gold-light:     #f6d99a;
+  --wine:           #4a1942;
+
+  --text-primary:   #faf3ec;
+  --text-muted:     #cbb9d6;
+  --text-faint:     rgba(250, 243, 236, 0.55);
+
+  --shadow-glow:    0 0 40px rgba(232, 143, 163, 0.35);
+  --shadow-gold:    0 0 40px rgba(234, 185, 106, 0.35);
+
+  /* ---- Typography ---- */
+  --font-script:  'Great Vibes', cursive;
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'Poppins', sans-serif;
+
+  /* ---- Layout ---- */
+  --max-width: 1180px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --nav-height: 76px;
+
+  /* ---- Motion ---- */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.25s;
+  --dur-med: 0.6s;
+  --dur-slow: 1.2s;
+
+  color-scheme: dark;
+}
+
+/* ---- Light theme override ---- */
+[data-theme="light"] {
+  --bg-deep:  #fdf6f2;
+  --bg-mid:   #fbeaee;
+  --bg-soft:  #f7dde6;
+  --surface:        rgba(74, 25, 66, 0.05);
+  --surface-strong: rgba(74, 25, 66, 0.09);
+  --border-glass:   rgba(74, 25, 66, 0.14);
+
+  --rose:       #c9506d;
+  --rose-light: #e88fa3;
+  --rose-deep:  #9c3f57;
+  --gold:       #c98a3a;
+  --gold-light: #e0aa5c;
+  --wine:       #4a1942;
+
+  --text-primary: #2b1448;
+  --text-muted:   #6a4d75;
+  --text-faint:   rgba(43, 20, 72, 0.55);
+
+  --shadow-glow: 0 0 30px rgba(201, 80, 109, 0.22);
+  --shadow-gold: 0 0 30px rgba(201, 138, 58, 0.22);
+
+  color-scheme: light;
+}
