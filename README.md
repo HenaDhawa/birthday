@@ -1,30 +1,6 @@
-# Happy Birthday, My Love 💌 — Interactive Birthday Website
+# Happy Birthday 💌 — Interactive Birthday Website
 
-A six-page, romantic birthday surprise site built with plain HTML5, CSS3, and vanilla JavaScript. No frameworks, no build step — just open it and go.
-
-## 📁 Project structure
-
-```
-birthday-surprise/
-├── index.html          Welcome page (hero, "Open My Surprise")
-├── love-story.html      Our Love Story (animated timeline)
-├── gallery.html          Memory Gallery (photo grid + lightbox)
-├── love-letter.html     Love Letter (envelope + typewriter)
-├── celebration.html     Birthday Celebration (cake, candles, confetti, fireworks, balloons)
-├── final.html            Final Surprise (cinematic closing)
-├── css/
-│   ├── variables.css     Design tokens (colors, type, spacing) + light/dark theme
-│   ├── base.css          Reset, nav, buttons, glassmorphism, loading screen, music player
-│   ├── animations.css    Shared @keyframes library
-│   ├── home.css / love-story.css / gallery.css / love-letter.css / celebration.css / final.css
-├── js/
-│   ├── main.js           Loading screen, theme toggle, mobile nav, music player, ambient particles, scroll-reveal
-│   ├── effects.js         Reusable confetti + fireworks engine (window.BdayEffects)
-│   └── home.js / love-story.js / gallery.js / love-letter.js / celebration.js / final.js
-└── assets/
-    ├── images/            memory-1.jpg … memory-8.jpg (placeholder photos — replace these!)
-    └── music/              put your romantic-bg.mp3 here
-```
+A six-page,  birthday surprise site built with plain HTML5, CSS3, and vanilla JavaScript. No frameworks, no build step — just open it and go.
 
 ## 🚀 How to use it
 
@@ -54,4 +30,4 @@ birthday-surprise/
 - Background music control with a small animated equalizer icon
 - Fully responsive from mobile to desktop, honors `prefers-reduced-motion`
 
-Made with ❤️ — happy customizing, and happy birthday to him.
+Made with ❤️ — happy customizing, and happy birthday
